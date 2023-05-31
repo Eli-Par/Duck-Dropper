@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class Pause_Menu : MonoBehaviour
 {
-    [SerializeField] private Scene_Manager sceneManager = default;
-
+    [Header("Animation")]
     [SerializeField] private GameObject backgroundPanel = default;
     [SerializeField] private Animator backgroundAnimator = default;
     [SerializeField] private float fadeInAbortTime = default;
@@ -13,6 +12,9 @@ public class Pause_Menu : MonoBehaviour
 
     [SerializeField] private GameObject buttons = default;
 
+    [Space]
+
+    [Header("Menu Properties")]
     public static bool isPaused = false;
 
     private float timeSincePaused = 0;
@@ -102,7 +104,7 @@ public class Pause_Menu : MonoBehaviour
         Time.timeScale = 1f;
 
         //Reload the active scene
-        sceneManager.ReloadScene();
+        Scene_Manager.Instance.ReloadScene();
     }
 
     public void Menu()
@@ -112,7 +114,7 @@ public class Pause_Menu : MonoBehaviour
         Time.timeScale = 1f;
 
         //Load the menu scene
-        sceneManager.ChangeScene(menuSceneIndex);
+        Scene_Manager.Instance.ChangeScene(menuSceneIndex);
     }
 
     public void Quit()

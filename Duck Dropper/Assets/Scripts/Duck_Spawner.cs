@@ -4,22 +4,27 @@ using UnityEngine;
 
 public class Duck_Spawner : MonoBehaviour
 {
-    public float duckHeight = 20f;
-    public float randRange = 0.5f;
+    [Header("Spawning Positions")]
+    [SerializeField] private float duckHeight = 20f;
+    [SerializeField] private float randRange = 0.5f;
 
-    public float continuousDelay = 0.1f;
+    [Header("Timings")]
+    [Tooltip("Length of time from click to continuously spawning ducks")]
+    [SerializeField] private float continuousDelay = 0.1f;
     private float continuousTimer = 0;
 
-    public int ducksPerSecond = 30;
+    [SerializeField] private int ducksPerSecond = 30;
     private float timeSinceDuck = 1;
 
-    public Dynamic_Queue dynamicQueue;
+    [Header("Dynamic Queue")]
+    [SerializeField] private Dynamic_Queue dynamicQueue = default;
 
-    public float boxCheckSize = 0.1f;
-    public int maxRandTries;
-    public LayerMask stuckDuckLayerMask;
+    [Header("Spawn Checking")]
+    [SerializeField] private float boxCheckSize = 0.1f;
+    [SerializeField] private int maxRandTries = 5;
+    [SerializeField] private LayerMask stuckDuckLayerMask = default;
 
-    int ducksSpawnedCount = 0;
+    private int ducksSpawnedCount = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -67,7 +72,7 @@ public class Duck_Spawner : MonoBehaviour
     }
 
     //Returns a Vector3 which is the position of the mouse in the game environment
-    Vector3 MouseRayPos()
+    private Vector3 MouseRayPos()
     {
         //Cast a ray from the mouse position and return the point hit
         RaycastHit hit;
@@ -81,7 +86,7 @@ public class Duck_Spawner : MonoBehaviour
     }
 
     //Spawn a duck into the world at the specified point
-    void SpawnDuck(Vector3 spawnPoint, float range)
+    private void SpawnDuck(Vector3 spawnPoint, float range)
     {
         //Change the spawnPoint y value to match the height ducks should spawn at
         spawnPoint.y = duckHeight;

@@ -4,30 +4,29 @@ using UnityEngine;
 
 public class Static_Queue : MonoBehaviour
 {
+    [Header("Section Grid")]
     public GameObject[] sectionsList;
     public int[] sectionIndices;
-    public int width;
-    public int height;
+    public int width = 1;
+    public int height = 1;
 
-    public Vector2 leftCorner;
-
-    [Space]
-
-    public GameObject[] duckObjs;
-    public int[] maxDucks;
-    public int[] currentDuckCounts;
-
-    [Space]
-    public GameObject target;
-
-    public Material m1;
-    public Material m2;
-
-    public float xScreenOffset = 0.15f;
-    public float yScreenOffset = 0.25f;
+    [SerializeField] private Vector2 leftCorner = default;
 
     [Space]
 
+    [Header("Duck Qualities")]
+    [SerializeField] private GameObject[] duckObjs = default;
+    [SerializeField] private int[] maxDucks = default;
+
+    private int[] currentDuckCounts;
+
+    [Space]
+
+    [Header("Screen Boundary Offsets")]
+    [SerializeField] private float xScreenOffset = 0.15f;
+    [SerializeField] private float yScreenOffset = 0.25f;
+
+    [System.NonSerialized]
     public Queue<GameObject>[] recycledDuckQueues;
 
     // Start is called before the first frame update
@@ -54,7 +53,7 @@ public class Static_Queue : MonoBehaviour
     }
 
     //Returns true if the position is on screen with a buffer around the edges
-    public bool PointOnScreen(Vector3 pos)
+    private bool PointOnScreen(Vector3 pos)
     {
         //Convert position to screen position
         Vector3 screenPos = Camera.main.WorldToScreenPoint(pos);
@@ -158,7 +157,7 @@ public class Static_Queue : MonoBehaviour
         }
     }
 
-    public GameObject RepoDuck(int quality, Vector3 futurePos)
+    private GameObject RepoDuck(int quality, Vector3 futurePos)
     {
         //Duck_Section section = sectionsList[duckQualityIndex[quality]].GetComponent<Duck_Section>();
 
@@ -182,7 +181,7 @@ public class Static_Queue : MonoBehaviour
     }
 
     //Adds the duck to the correct section
-    public void RegisterDuck(GameObject duck, int quality)
+    private void RegisterDuck(GameObject duck, int quality)
     {
         //Get the index of the section the duck is in
         int sectionIndex = FindObjectIndex(duck.transform.position.x, duck.transform.position.z);
@@ -199,7 +198,7 @@ public class Static_Queue : MonoBehaviour
     }
 
     //Returns the highest index that has a duck of a given quality
-    int FindHighestQualityIndex(int quality)
+    private int FindHighestQualityIndex(int quality)
     {
         //Loop through all sections, starting at the ones with the largest indexes (farthest back)
         for (int i = sectionsList.Length - 1; i >= 0; i--)

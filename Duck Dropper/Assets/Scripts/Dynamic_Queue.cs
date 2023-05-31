@@ -4,19 +4,20 @@ using UnityEngine;
 
 public class Dynamic_Queue : MonoBehaviour
 {
-    public GameObject duckObj;
-    public int duckCount;
+    [Header("High Quality Ducks")]
+    [SerializeField] private GameObject duckObj = default;
+    [SerializeField] private int duckCount = 150;
 
-    public GameObject basicDuckObj;
-    public int basicDuckCount;
+    [Header("Basic Ducks")]
+    [SerializeField] private GameObject basicDuckObj = default;
+    [SerializeField] private int basicDuckCount = 150;
 
-    public Static_Queue staticQueue;
+    [Header("Static Queue")]
+    [SerializeField] private Static_Queue staticQueue = default;
 
-    public Vector3 staticSwapExtents;
-    public Vector3 staticSwapOffset;
-
-    public float verticalSpeedSwapMax = 0.05f;
-    public float verticalSpeedSwapMin = 0.05f;
+    [Header("Quality Switching Speed Range")]
+    [SerializeField] private float verticalSpeedSwapMax = 0.05f;
+    [SerializeField] private float verticalSpeedSwapMin = 0.05f;
 
     GameObject[] duckList;
     GameObject[] basicDuckList;
@@ -97,7 +98,7 @@ public class Dynamic_Queue : MonoBehaviour
     }
 
     //Moved the basic duck to the high quality ducks old position and moves the high quality duck to a new position.
-    void SwapDuckIndexes(Vector3 newPos, Rigidbody duckRB)
+    private void SwapDuckIndexes(Vector3 newPos, Rigidbody duckRB)
     {
         //Set the basic ducks position and rotation to be the same as the high quality duck
         basicDuckList[basicDuckIndex].transform.position = duckList[duckIndex].transform.position;

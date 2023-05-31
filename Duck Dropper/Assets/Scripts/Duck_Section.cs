@@ -3,28 +3,33 @@ using UnityEngine;
 
 public class Duck_Section : MonoBehaviour
 {
-    public int duckQualityCount = 4;
+    [Header("Quality Levels")]
+    [SerializeField] private int duckQualityCount = 4;
+
+    [System.NonSerialized]
     public List<GameObject>[] duckQueues;
 
+    [Header("Culling Settings")]
     public bool cullingEnabled = true;
 
-    public float cullingOffset = 2f;
+    [SerializeField] private float cullingOffset = 2f;
 
-    public float minHeight = -20f;
+    [SerializeField] private float minHeight = -20f;
 
-    float highestDuck = -20f;
+    private float highestDuck = -20f;
 
-    public GameObject blockObj;
+    [SerializeField] private GameObject blockObj = default;
 
-    public float blockHeight = 20f;
+    [SerializeField] private float blockHeight = 20f;
 
     GameObject block;
 
-    public float blockY = -100;
+    private float blockY = -100;
 
-    List<Duck_Section> adjacentSections = new List<Duck_Section>();
+    private List<Duck_Section> adjacentSections = new List<Duck_Section>();
 
     [Space]
+    [Header("Temporary Variables")]
     public int[] counts = new int[4];
 
     void Start()
@@ -59,7 +64,7 @@ public class Duck_Section : MonoBehaviour
         }
     }
 
-    public void AddAdjacentSection(Static_Queue queue, Vector2 dir)
+    private void AddAdjacentSection(Static_Queue queue, Vector2 dir)
     {
         //Find the index of the section in the direction specified
         int index = queue.FindObjectIndex(transform.position.x + dir.x, transform.position.z + dir.y);
@@ -116,7 +121,7 @@ public class Duck_Section : MonoBehaviour
         }
     }
 
-    public void UpdateBlock(Static_Queue queue, float height)
+    private void UpdateBlock(Static_Queue queue, float height)
     {
         //Move the block so that the top of it is at the specified height
         block.transform.position = new Vector3(transform.position.x, height - blockHeight / 2, transform.position.z);

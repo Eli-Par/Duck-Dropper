@@ -3,20 +3,16 @@ using UnityEditor;
 
 public class Renaming : EditorWindow
 {
-    string newName = "Object";
 
-    [MenuItem("Window/Renaming")]
+    [MenuItem("Window/Section Editor")]
     public static void ShowWindow()
     {
-        GetWindow<Renaming>("Renaming");
+        GetWindow<Renaming>("Section Editor");
     }
 
     private void OnGUI()
     {
-        //GUILayout.Label("Name", EditorStyles.boldLabel);
-        newName = EditorGUILayout.TextField("Name", newName);
-
-        if(GUILayout.Button("Something Selected"))
+        if(GUILayout.Button("Hide Culled Selected Sections"))
         {
             for(int i = 0; i < Selection.gameObjects.Length; i++)
             {

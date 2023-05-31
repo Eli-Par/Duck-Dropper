@@ -75,7 +75,7 @@ public class Static_Queue_Editor : Editor
     }
 
     //Sort an individual row of sections by distance
-    void SortWidth(Static_Queue queue, int startIndex)
+    private void SortWidth(Static_Queue queue, int startIndex)
     {
         float[] distances = new float[queue.width];
         GameObject[] objs = new GameObject[queue.width];

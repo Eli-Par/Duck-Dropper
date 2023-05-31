@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Duck_Spawner : MonoBehaviour
 {
@@ -24,6 +25,9 @@ public class Duck_Spawner : MonoBehaviour
     [SerializeField] private int maxRandTries = 5;
     [SerializeField] private LayerMask stuckDuckLayerMask = default;
 
+    [Header("Duck Counter UI")]
+    [SerializeField] private TextMeshProUGUI duckCounterText;
+    [SerializeField] private string textFormat = "0000";
     private int ducksSpawnedCount = 0;
 
     // Start is called before the first frame update
@@ -130,5 +134,8 @@ public class Duck_Spawner : MonoBehaviour
 
         //Add a duck at the location specified by the spawnPoint with the random offset
         dynamicQueue.AddDuck(spawnPoint + randOffset);
+
+        //Update duck counter text
+        duckCounterText.text = ducksSpawnedCount.ToString(textFormat);
     }
 }

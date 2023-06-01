@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Main Menu.unity
+    guid: 2bfaabed1500031408ba61c97cc74bfd
+  - enabled: 1
     path: Assets/Scenes/DuckGameScene.unity
     guid: 60c26f6ed204e904a9d8f2de605dc668
-  - enabled: 1
-    path: Assets/Scenes/DuckMenu.unity
-    guid: 40cedfa9f210f724eb1ee6ddc2bb9d5c
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

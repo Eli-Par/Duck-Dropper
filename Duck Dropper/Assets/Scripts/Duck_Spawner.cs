@@ -26,7 +26,7 @@ public class Duck_Spawner : MonoBehaviour
     [SerializeField] private LayerMask stuckDuckLayerMask = default;
 
     [Header("Duck Counter UI")]
-    [SerializeField] private TextMeshProUGUI duckCounterText;
+    [SerializeField] private TextMeshProUGUI duckCounterText = default;
     [SerializeField] private string textFormat = "0000";
     private int ducksSpawnedCount = 0;
 
@@ -40,7 +40,7 @@ public class Duck_Spawner : MonoBehaviour
     void Update()
     {
         //When the mouse is first clicker, spawn a duck and start the timer to continuous duck spawning
-        if(Input.GetMouseButtonDown(0))
+        if(Input.GetMouseButtonDown(0) && !Pause_Menu.isPaused)
         {
             //Reset the timer for continuous duck spawning
             continuousTimer = 0;
@@ -53,7 +53,7 @@ public class Duck_Spawner : MonoBehaviour
         }
 
         //If the mouse button is held and the delay from initial click is done, spawn a duck
-        if(Input.GetMouseButton(0) && continuousTimer >= continuousDelay)
+        if(Input.GetMouseButton(0) && continuousTimer >= continuousDelay && !Pause_Menu.isPaused)
         {
             //Spawn as many ducks at the mouse position as would have spawned based on the ducksPerSecond
             while(timeSinceDuck >= 1f / ducksPerSecond)

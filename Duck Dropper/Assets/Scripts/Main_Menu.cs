@@ -61,11 +61,6 @@ public class Main_Menu : MonoBehaviour
         Scene_Manager.Instance.ChangeScene(gameSceneIndex);
     }
 
-    public void OpenOptions()
-    {
-        Debug.Log("Open Options");
-    }
-
     public void Quit()
     {
         Debug.Log("Quitting");

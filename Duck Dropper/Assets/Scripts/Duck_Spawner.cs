@@ -37,6 +37,7 @@ public class Duck_Spawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Load the duck quality setting index and apply it
         if (PlayerPrefs.HasKey("duckLevel")) duckSettingIndex = PlayerPrefs.GetInt("duckLevel");
         dynamicQueue.SetDuckSettings(duckSettings[duckSettingIndex]);
     }

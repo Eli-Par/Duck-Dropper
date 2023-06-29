@@ -32,6 +32,7 @@ public class Dynamic_Queue : MonoBehaviour
         basicDuckList = new GameObject[basicDuckCount];
     }
 
+    //Load maximum duck counts and have the status queue do the same
     public void SetDuckSettings(Duck_Setting setting)
     {
         duckCount = setting.dynamicHighDuckCount;

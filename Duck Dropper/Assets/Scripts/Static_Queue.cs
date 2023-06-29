@@ -52,6 +52,7 @@ public class Static_Queue : MonoBehaviour
 
     }
 
+    //Load maximum duck counts
     public void SetDuckSettings(Duck_Setting setting)
     {
         maxDucks[0] = setting.staticHighDuckCount;

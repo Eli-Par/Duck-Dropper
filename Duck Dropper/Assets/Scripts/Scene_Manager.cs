@@ -53,10 +53,10 @@ public class Scene_Manager : MonoBehaviour
         yield return new WaitForSecondsRealtime(transitionStartTime);
 
         //Load the scene
-        SceneManager.LoadScene(index);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(index);
 
         //Wait until the scene is done loading
-        while (SceneManager.GetActiveScene().buildIndex != index)
+        while (!asyncLoad.isDone)
         {
             yield return null;
         }

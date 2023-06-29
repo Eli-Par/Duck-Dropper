@@ -1587,7 +1587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Quality: Medium'
+  m_text: 'Quality: Very High'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1c515ce2abbc884f8a1485a530ba332, type: 2}
   m_sharedMaterial: {fileID: 9191822763141341600, guid: c1c515ce2abbc884f8a1485a530ba332, type: 2}
@@ -1661,10 +1661,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 264931191}
-    characterCount: 15
+    characterCount: 18
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 2
+    spaceCount: 2
+    wordCount: 3
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -4617,7 +4617,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -75}
-  m_SizeDelta: {x: 489.48523, y: 59.787918}
+  m_SizeDelta: {x: 493.55975, y: 59.787918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1016648757
 MonoBehaviour:
@@ -4664,8 +4664,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1992775912}
         m_TargetAssemblyTypeName: Main_Menu, Assembly-CSharp
-        m_MethodName: SetScreenMultiplier
-        m_Mode: 3
+        m_MethodName: IncreaseAliasingLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8077,7 +8077,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -10}
-  m_SizeDelta: {x: 397.7362, y: 59.787918}
+  m_SizeDelta: {x: 467.86743, y: 59.787918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1898258415
 MonoBehaviour:
@@ -8124,8 +8124,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1992775912}
         m_TargetAssemblyTypeName: Main_Menu, Assembly-CSharp
-        m_MethodName: SetScreenMultiplier
-        m_Mode: 3
+        m_MethodName: IncreaseQualityLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8583,6 +8583,25 @@ MonoBehaviour:
   screenOffset: 600
   currentOffsetMultiplier: 0
   screenTransitionSpeed: 750
+  defaultQualityLevel: 2
+  qualityLevel: 0
+  qualityLevelKey: qualityLevel
+  qualityLevelText: {fileID: 264931191}
+  qualityLevelPrefix: 'Quality: '
+  aliasingDefault: 0
+  aliasingLevel: 0
+  aliasingKey: aliasingLevel
+  aliasingText: {fileID: 538561800}
+  aliasingTextPrefix: 'Anti-Aliasing: '
+  aliasingNames:
+  - None
+  - FXAA
+  - SMAA Low
+  - SMAA Medium
+  - SMAA High
+  aliasingButtonTransform: {fileID: 1016648756}
+  aliasingNormalWidth: 493.5598
+  aliasingLargeWidth: 683.0557
 --- !u!1 &1998865189
 GameObject:
   m_ObjectHideFlags: 0

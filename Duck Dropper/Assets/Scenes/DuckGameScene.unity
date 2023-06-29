@@ -9593,7 +9593,7 @@ MonoBehaviour:
   - {fileID: 5021579576085229365, guid: 578797f7c23f34f4f81f6b3789b86a24, type: 3}
   - {fileID: 2440930781697142588, guid: 081729f1b6297d74c95cde9e322aed79, type: 3}
   - {fileID: 291041739079621454, guid: a7d4374b04587d64e849e4f514512ae6, type: 3}
-  maxDucks: 96000000e2040000e803000010270000
+  maxDucks: fa000000d6060000e803000010270000
   xScreenOffset: 0.15
   yScreenOffset: 0.2
 --- !u!4 &652920987
@@ -11549,6 +11549,13 @@ MonoBehaviour:
     m_Bits: 1024
   duckCounterText: {fileID: 989376096}
   textFormat: 0000
+  duckSettings:
+  - {fileID: 11400000, guid: 31068e70abadbb64eb23a29e5784ea16, type: 2}
+  - {fileID: 11400000, guid: 78ef0647a47f9d443abc001a92ec0b4e, type: 2}
+  - {fileID: 11400000, guid: c024229cb05c9034e9719fc94cb89b88, type: 2}
+  - {fileID: 11400000, guid: e6f88410631118e41b7a15f361e17a47, type: 2}
+  - {fileID: 11400000, guid: c5e4db54063372440a7f1e2ceaf600eb, type: 2}
+  duckSettingIndex: 2
 --- !u!4 &762449443
 Transform:
   m_ObjectHideFlags: 0
@@ -23697,6 +23704,7 @@ GameObject:
   - component: {fileID: 1687258584}
   - component: {fileID: 1687258582}
   - component: {fileID: 1687258586}
+  - component: {fileID: 1687258583}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -23712,6 +23720,18 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1687258581}
   m_Enabled: 1
+--- !u!114 &1687258583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1687258581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a63baddcdc215b54198f3053b2ce9604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!20 &1687258584
 Camera:
   m_ObjectHideFlags: 0
@@ -26569,9 +26589,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   duckObj: {fileID: 2670437432580638293, guid: f663647f02342ec479453ec0705045c7, type: 3}
-  duckCount: 175
+  duckCount: 200
   basicDuckObj: {fileID: 5021579576085229365, guid: 65aab1fea66b5bf4fb0919bb6c71a8fc, type: 3}
-  basicDuckCount: 350
+  basicDuckCount: 250
   staticQueue: {fileID: 652920986}
   verticalSpeedSwapMax: 0.15
   verticalSpeedSwapMin: -0.15
@@ -27422,7 +27442,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 965.6, y: 500}
+  m_SizeDelta: {x: 7283.9116, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1902631524
 MonoBehaviour:

@@ -32,6 +32,15 @@ public class Dynamic_Queue : MonoBehaviour
         basicDuckList = new GameObject[basicDuckCount];
     }
 
+    //Load maximum duck counts and have the status queue do the same
+    public void SetDuckSettings(Duck_Setting setting)
+    {
+        duckCount = setting.dynamicHighDuckCount;
+        basicDuckCount = setting.dynamicDuckCount;
+
+        staticQueue.SetDuckSettings(setting);
+    }
+
     public void AddDuck(Vector3 pos)
     {
         //If there is not already a high quality duck in the list, add one.

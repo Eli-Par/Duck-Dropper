@@ -30,10 +30,16 @@ public class Duck_Spawner : MonoBehaviour
     [SerializeField] private string textFormat = "0000";
     private int ducksSpawnedCount = 0;
 
+    [Space]
+    public Duck_Setting[] duckSettings = default;
+    public int duckSettingIndex = 2;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        //Load the duck quality setting index and apply it
+        if (PlayerPrefs.HasKey("duckLevel")) duckSettingIndex = PlayerPrefs.GetInt("duckLevel");
+        dynamicQueue.SetDuckSettings(duckSettings[duckSettingIndex]);
     }
 
     // Update is called once per frame

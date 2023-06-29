@@ -52,6 +52,14 @@ public class Static_Queue : MonoBehaviour
 
     }
 
+    public void SetDuckSettings(Duck_Setting setting)
+    {
+        maxDucks[0] = setting.staticHighDuckCount;
+        maxDucks[1] = setting.staticDuckCount;
+        maxDucks[2] = setting.staticBoxDuckCount;
+        maxDucks[3] = setting.staticFlatDuckCount;
+    }
+
     //Returns true if the position is on screen with a buffer around the edges
     private bool PointOnScreen(Vector3 pos)
     {

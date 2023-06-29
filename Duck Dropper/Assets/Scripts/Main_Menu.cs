@@ -37,6 +37,14 @@ public class Main_Menu : MonoBehaviour
     public float aliasingNormalWidth = default;
     public float aliasingLargeWidth = default;
 
+    [Space]
+    public int duckLevelDefault = 0;
+    public int duckLevel = 0;
+    public string duckLevelKey = "duckLevel";
+    public TextMeshProUGUI duckLevelText = default;
+    public string duckLevelTextPrefix = "Duck Quality: ";
+    public string[] duckLevelNames = default;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -69,6 +77,20 @@ public class Main_Menu : MonoBehaviour
         //Set the aliasing setting and text to match
         SetAliasingQuality();
         aliasingText.text = aliasingTextPrefix + aliasingNames[aliasingLevel];
+
+        //
+        if (PlayerPrefs.HasKey(duckLevelKey))
+        {
+            duckLevel = PlayerPrefs.GetInt(duckLevelKey);
+        }
+        else
+        {
+            PlayerPrefs.SetInt(duckLevelKey, duckLevelDefault);
+            duckLevel = duckLevelDefault;
+        }
+
+        //
+        duckLevelText.text = duckLevelTextPrefix + duckLevelNames[duckLevel];
     }
 
     // Update is called once per frame
@@ -173,6 +195,19 @@ public class Main_Menu : MonoBehaviour
             aliasingButtonTransform.sizeDelta = new Vector2(aliasingLargeWidth, aliasingButtonTransform.sizeDelta.y);
         }
 
+    }
+
+    public void IncreaseDuckLevel()
+    {
+        //
+        duckLevel++;
+        if (duckLevel >= duckLevelNames.Length) duckLevel = 0;
+
+        //
+        duckLevelText.text = duckLevelTextPrefix + duckLevelNames[duckLevel];
+
+        //
+        PlayerPrefs.SetInt(duckLevelKey, duckLevel);
     }
 
 }

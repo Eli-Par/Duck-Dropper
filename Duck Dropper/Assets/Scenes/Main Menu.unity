@@ -4016,7 +4016,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Duck Quality: Medium'
+  m_text: 'Duck Quality: Very High'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c1c515ce2abbc884f8a1485a530ba332, type: 2}
   m_sharedMaterial: {fileID: 9191822763141341600, guid: c1c515ce2abbc884f8a1485a530ba332, type: 2}
@@ -4090,10 +4090,10 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 835438660}
-    characterCount: 20
+    characterCount: 23
     spriteCount: 0
-    spaceCount: 2
-    wordCount: 3
+    spaceCount: 3
+    wordCount: 4
     linkCount: 0
     lineCount: 1
     pageCount: 1
@@ -6519,7 +6519,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -145}
-  m_SizeDelta: {x: 520.9962, y: 59.787918}
+  m_SizeDelta: {x: 580.1312, y: 59.787918}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1620749838
 MonoBehaviour:
@@ -6566,8 +6566,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1992775912}
         m_TargetAssemblyTypeName: Main_Menu, Assembly-CSharp
-        m_MethodName: SetScreenMultiplier
-        m_Mode: 3
+        m_MethodName: IncreaseDuckLevel
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8602,6 +8602,17 @@ MonoBehaviour:
   aliasingButtonTransform: {fileID: 1016648756}
   aliasingNormalWidth: 493.5598
   aliasingLargeWidth: 683.0557
+  duckLevelDefault: 2
+  duckLevel: 0
+  duckLevelKey: duckLevel
+  duckLevelText: {fileID: 835438660}
+  duckLevelTextPrefix: 'Duck Quality: '
+  duckLevelNames:
+  - Very Low
+  - Low
+  - Medium
+  - High
+  - Very High
 --- !u!1 &1998865189
 GameObject:
   m_ObjectHideFlags: 0

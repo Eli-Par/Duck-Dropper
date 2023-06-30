@@ -7,22 +7,22 @@ public class Scene_Manager : MonoBehaviour
 {
     public static Scene_Manager Instance { get; private set; }
 
-    [SerializeField] private GameObject transitionObj = default;
-    [SerializeField] private Animator transitionAnimator = default;
+    [Header("Transition Durations")]
     [SerializeField] private float transitionStartTime = 1f;
     [SerializeField] private float transitionEndTime = 1f;
 
-    [SerializeField] private string startAnimName = default;
-    [SerializeField] private string endAnimName = default;
-
     [Space]
+    [Header("RectTransforms")]
     public RectTransform canvasTransform;
     public RectTransform transitionTransform;
     public RectTransform duckTransform;
+
+    [Space]
+    [Header("Transform Animation")]
+    [Tooltip("The offset of the duck image from the rectangle image")]
     public Vector2 offset;
 
     public Vector2 startPos;
-
     public Vector2 endPos;
 
     public Vector2 aspectRatio;
@@ -31,7 +31,7 @@ public class Scene_Manager : MonoBehaviour
 
     public int easePow = 3;
 
-    private bool transitionActive = false;
+    [HideInInspector] public static bool transitionActive = false;
 
     private void Awake()
     {
@@ -45,9 +45,6 @@ public class Scene_Manager : MonoBehaviour
         {
             Instance = this;
         }
-
-        //Hide to begin with
-        transitionObj.SetActive(false);
 
         transitionTransform.gameObject.SetActive(true);
         duckTransform.gameObject.SetActive(true);

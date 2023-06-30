@@ -16,7 +16,7 @@ public class Pause_Menu : MonoBehaviour
 
     [Header("Menu Properties")]
     public static bool isPaused = false;
-    public static bool canPause = true;
+    [HideInInspector] public static bool canPause = true;
 
     private float timeSincePaused = 0;
 

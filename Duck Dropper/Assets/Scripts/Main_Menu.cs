@@ -106,6 +106,12 @@ public class Main_Menu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //If escape is pressed, reset to the main screen
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            SetScreenMultiplier(0);
+        }
+
         //Make the width of the instruction box the same as the canvas width
         float width = canvasTransform.rect.width;
         instructionTransform.sizeDelta = new Vector2(width, instructionTransform.sizeDelta.y);

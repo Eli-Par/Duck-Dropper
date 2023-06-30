@@ -4705,7 +4705,7 @@ GameObject:
   - component: {fileID: 264369652}
   - component: {fileID: 264369651}
   m_Layer: 5
-  m_Name: Instruction Title
+  m_Name: Options Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4728,7 +4728,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 145}
-  m_SizeDelta: {x: 564.13696, y: 97.36737}
+  m_SizeDelta: {x: 338.62207, y: 97.36737}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &264369651
 MonoBehaviour:
@@ -4750,7 +4750,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Instructions
+  m_text: Options
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd4b1b4fd0d752741acc8eb33cda7390, type: 2}
   m_sharedMaterial: {fileID: -2612919775276953841, guid: bd4b1b4fd0d752741acc8eb33cda7390, type: 2}
@@ -4824,7 +4824,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 264369651}
-    characterCount: 12
+    characterCount: 7
     spriteCount: 0
     spaceCount: 0
     wordCount: 1

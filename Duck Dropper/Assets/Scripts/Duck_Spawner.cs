@@ -45,6 +45,12 @@ public class Duck_Spawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //If the scene manager is active, reset the time since the last duck was spawned
+        if(Scene_Manager.transitionActive)
+        {
+            timeSinceDuck = 0;
+        }
+
         //When the mouse is first clicker, spawn a duck and start the timer to continuous duck spawning
         if(Input.GetMouseButtonDown(0) && !Pause_Menu.isPaused && !Scene_Manager.transitionActive)
         {

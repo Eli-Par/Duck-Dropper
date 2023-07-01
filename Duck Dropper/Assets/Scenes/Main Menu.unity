@@ -35971,3 +35971,60 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &938457387318038751
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 480023613709948609, guid: 9213bc11ff79a2542925b4e3edc60d59, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.518635
+      objectReference: {fileID: 0}
+    - target: {fileID: 480023613709948609, guid: 9213bc11ff79a2542925b4e3edc60d59, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2139802
+      objectReference: {fileID: 0}
+    - target: {fileID: 480023613709948609, guid: 9213bc11ff79a2542925b4e3edc60d59, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.2075925
+      objectReference: {fileID: 0}
+    - target: {fileID: 480023613709948609, guid: 9213bc11ff79a2542925b4e3edc60d59, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480023613709948609, guid: 9213bc11ff79a2542925b4e3edc60d59, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480023613709948609, guid: 9213bc11ff79a2542925b4e3edc60d59, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480023613709948609, guid: 9213bc11ff79a2542925b4e3edc60d59, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 480023613709948609, guid: 9213bc11ff79a2542925b4e3edc60d59, type: 3}
+      propertyPath: m_RootOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 480023613709948609, guid: 9213bc11ff79a2542925b4e3edc60d59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480023613709948609, guid: 9213bc11ff79a2542925b4e3edc60d59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 480023613709948609, guid: 9213bc11ff79a2542925b4e3edc60d59, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3610319759492807870, guid: 9213bc11ff79a2542925b4e3edc60d59, type: 3}
+      propertyPath: m_Name
+      value: Music Manager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9213bc11ff79a2542925b4e3edc60d59, type: 3}

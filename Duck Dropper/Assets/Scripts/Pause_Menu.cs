@@ -16,6 +16,7 @@ public class Pause_Menu : MonoBehaviour
 
     [Header("Menu Properties")]
     public static bool isPaused = false;
+    [HideInInspector] public static bool canPause = true;
 
     private float timeSincePaused = 0;
 
@@ -88,6 +89,9 @@ public class Pause_Menu : MonoBehaviour
 
     void Pause()
     {
+        //If pausing is disabled, return
+        if (!canPause) return;
+
         //Change the pause bool, reset the time scale and show all buttons
         isPaused = true;
         Time.timeScale = 0f;

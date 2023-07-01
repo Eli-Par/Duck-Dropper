@@ -22,6 +22,10 @@ public class Pause_Menu : MonoBehaviour
 
     [SerializeField] private int menuSceneIndex = default;
 
+    [Space]
+    [Header("Audio")]
+    [SerializeField] private AudioSource clickAudio = default;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,6 +59,11 @@ public class Pause_Menu : MonoBehaviour
         {
             timeSincePaused = 0;
         }
+    }
+
+    public void PlayClick()
+    {
+        clickAudio.Play();
     }
 
     //Remove the pause menu and continue the game

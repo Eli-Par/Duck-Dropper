@@ -55,6 +55,10 @@ public class Main_Menu : MonoBehaviour
     public float camRot2 = 0;
     public int cameraEasePow = 3;
 
+    [Space]
+    [Header("Audio")]
+    [SerializeField] private AudioSource clickAudio = default;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -169,6 +173,11 @@ public class Main_Menu : MonoBehaviour
     float EaseIn(float t, int p)
     {
         return Mathf.Pow(t, p);
+    }
+
+    public void PlayClick()
+    {
+        clickAudio.Play();
     }
 
     public void StartGame()

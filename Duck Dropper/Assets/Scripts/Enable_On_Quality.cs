@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Enable_On_Quality : MonoBehaviour
 {
-    [SerializeField] private MeshRenderer meshRenderer;
-    [SerializeField] private int qualitySetting;
+    [SerializeField] private MeshRenderer meshRenderer = default;
+    [SerializeField] private int qualitySetting = default;
     [SerializeField] private bool activeOnQuality = false;
 
     // Start is called before the first frame update

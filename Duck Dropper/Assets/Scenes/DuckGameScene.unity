@@ -11909,7 +11909,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duckHeight: 7
   randRange: 0.5
-  continuousDelay: 0.1
+  continuousDelay: 0.15
   ducksPerSecond: 45
   dynamicQueue: {fileID: 1840053807}
   boxCheckSize: 0.01

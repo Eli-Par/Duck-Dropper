@@ -41,7 +41,7 @@ public class Dynamic_Queue : MonoBehaviour
         staticQueue.SetDuckSettings(setting);
     }
 
-    public void AddDuck(Vector3 pos)
+    public void AddDuck(Vector3 pos, bool important)
     {
         //If there is not already a high quality duck in the list, add one.
         //Otherwise, move a basic duck to replace a high quality duck and use the replaced high quality duck
@@ -99,6 +99,9 @@ public class Dynamic_Queue : MonoBehaviour
                 if (basicDuckIndex >= basicDuckList.Length) basicDuckIndex = 0;
             }
         }
+
+        Duck_Sounds sounds = duckList[duckIndex].GetComponent<Duck_Sounds>();
+        if (sounds != null) sounds.isImportant = important;
 
         //Increment duckIndex, if out of bounds set index to 0
         duckIndex++;

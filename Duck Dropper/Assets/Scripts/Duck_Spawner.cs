@@ -61,7 +61,7 @@ public class Duck_Spawner : MonoBehaviour
             timeSinceDuck = 0;
 
             //Spawn a duck where the mouse is
-            SpawnDuck(MouseRayPos(), 0);
+            SpawnDuck(MouseRayPos(), 0, true);
         }
 
         //If the mouse button is held and the delay from initial click is done, spawn a duck
@@ -101,8 +101,13 @@ public class Duck_Spawner : MonoBehaviour
         return new Vector3(0, duckHeight, 0);
     }
 
-    //Spawn a duck into the world at the specified point
     private void SpawnDuck(Vector3 spawnPoint, float range)
+    {
+        SpawnDuck(spawnPoint, range, false);
+    }
+
+    //Spawn a duck into the world at the specified point
+    private void SpawnDuck(Vector3 spawnPoint, float range, bool important)
     {
         //Change the spawnPoint y value to match the height ducks should spawn at
         spawnPoint.y = duckHeight;
@@ -145,7 +150,7 @@ public class Duck_Spawner : MonoBehaviour
         } while (Physics.CheckBox(spawnPoint + randOffset, new Vector3(boxCheckSize, boxCheckSize, boxCheckSize), Quaternion.identity, stuckDuckLayerMask));
 
         //Add a duck at the location specified by the spawnPoint with the random offset
-        dynamicQueue.AddDuck(spawnPoint + randOffset);
+        dynamicQueue.AddDuck(spawnPoint + randOffset, important);
 
         //Update duck counter text
         duckCounterText.text = ducksSpawnedCount.ToString(textFormat);

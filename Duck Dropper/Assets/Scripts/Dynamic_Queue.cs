@@ -47,7 +47,7 @@ public class Dynamic_Queue : MonoBehaviour
         //Otherwise, move a basic duck to replace a high quality duck and use the replaced high quality duck
         if(duckList[duckIndex] == null)
         {
-            duckList[duckIndex] = Instantiate(duckObj, pos, Quaternion.identity);
+            duckList[duckIndex] = Instantiate(duckObj, pos, Random.rotation);
         }
         else
         {

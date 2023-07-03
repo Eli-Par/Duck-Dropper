@@ -127,6 +127,12 @@ public class Static_Queue : MonoBehaviour
             newDuck.transform.position = position;
             newDuck.transform.rotation = rotation;
 
+            //If the duck is a flat duck, make it look at the camera
+            if (quality == duckObjs.Length - 1)
+            {
+                newDuck.transform.LookAt(Camera.main.transform.position);
+            }
+
             RegisterDuck(newDuck, quality);
             return;
         }

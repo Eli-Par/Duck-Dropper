@@ -265,7 +265,7 @@ PlayerSettings:
   - m_BuildTarget: 
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 53aebe539d73d134eac845d6434e688a, type: 3}
+      m_Icon: {fileID: 2800000, guid: 26a62a450abe86b4b8c3321514994c60, type: 3}
       m_Width: 128
       m_Height: 128
       m_Kind: 0
@@ -660,7 +660,7 @@ PlayerSettings:
   - libSceS3DConversion.prx
   ps4attribVROutputEnabled: 0
   monoEnv: 
-  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 466effcb51836dc49a54797a539d33b7, type: 3}
+  splashScreenBackgroundSourceLandscape: {fileID: 21300000, guid: 68068a73c3eae5f44b63ef198c67112b, type: 3}
   splashScreenBackgroundSourcePortrait: {fileID: 0}
   blurSplashScreenBackground: 1
   spritePackerPolicy: 

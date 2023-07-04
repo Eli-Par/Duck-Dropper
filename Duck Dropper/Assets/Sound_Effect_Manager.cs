@@ -16,10 +16,15 @@ public class Sound_Effect_Manager : MonoBehaviour
 
     [SerializeField] private int maxConcurrentSounds = default;
 
+    public float volumeMultiplier;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (PlayerPrefs.HasKey("soundVolume"))
+        {
+            volumeMultiplier = PlayerPrefs.GetFloat("soundVolume");
+        }
     }
 
     // Update is called once per frame

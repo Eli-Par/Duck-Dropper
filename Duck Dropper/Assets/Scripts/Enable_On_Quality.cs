@@ -11,7 +11,12 @@ public class Enable_On_Quality : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if(QualitySettings.GetQualityLevel() == qualitySetting)
+        QualityUpdated();
+    }
+
+    public void QualityUpdated()
+    {
+        if (QualitySettings.GetQualityLevel() == qualitySetting)
         {
             meshRenderer.enabled = activeOnQuality;
         }

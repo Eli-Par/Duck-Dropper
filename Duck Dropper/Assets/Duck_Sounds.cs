@@ -20,6 +20,8 @@ public class Duck_Sounds : MonoBehaviour
 
     [SerializeField] private float delayBetweenSounds = 0.2f;
 
+    [SerializeField] private float yCutoff = 6f;
+
     [Space]
     public float timeSinceSound = 10;
 
@@ -27,11 +29,15 @@ public class Duck_Sounds : MonoBehaviour
 
     Sound_Effect_Manager soundEffectManager;
 
+    private float volumeMultiplier;
+
     // Start is called before the first frame update
     void Start()
     {
         //Get a reference to the sound effect manager that controls which ducks are allowed to play a hit sound
         soundEffectManager = (Sound_Effect_Manager)FindObjectOfType(typeof(Sound_Effect_Manager));
+
+        volumeMultiplier = soundEffectManager.volumeMultiplier;
     }
 
     // Update is called once per frame
@@ -45,8 +51,8 @@ public class Duck_Sounds : MonoBehaviour
         //Check if the relative velocity is high enough for a hit sound
         if(collision.relativeVelocity.magnitude >= relativeVelCutoff)
         {
-            //Check if the duck is moving enough for a hit sound
-            if(rb.velocity.magnitude >= velCutoff)
+            //Check if the duck is moving enough for a hit sound and the y position is at or below the y cutoff
+            if(rb.velocity.magnitude >= velCutoff && transform.position.y <= yCutoff)
             {
                 //Check if the other duck is not playing a sound
                 Duck_Sounds otherDuckSounds = collision.gameObject.GetComponent<Duck_Sounds>();
@@ -90,7 +96,7 @@ public class Duck_Sounds : MonoBehaviour
         source.pitch = 1 + Random.Range(-pitchShiftMax, pitchShiftMax);
 
         //Set the volume and play the sound
-        source.volume = volume;
+        source.volume = volume * volumeMultiplier;
         source.Play();
 
         //Reset the amount of time since a hit sound played

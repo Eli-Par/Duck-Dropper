@@ -26130,6 +26130,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   delayBetweenSounds: 0.016666668
   maxConcurrentSounds: 3
+  volumeMultiplier: 0
 --- !u!4 &1777642815
 Transform:
   m_ObjectHideFlags: 0

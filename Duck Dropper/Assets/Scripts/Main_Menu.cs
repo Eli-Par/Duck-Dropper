@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using UnityEngine.Rendering.Universal;
 
@@ -28,6 +29,8 @@ public class Main_Menu : MonoBehaviour
     public TextMeshProUGUI qualityLevelText = default;
     public string qualityLevelPrefix = "Quality: ";
 
+    [SerializeField] private Enable_On_Quality enableOnQuality = default;
+
     [Space]
     [Header("Anti-aliasing Settings")]
     public int aliasingDefault = 0;
@@ -48,6 +51,21 @@ public class Main_Menu : MonoBehaviour
     public TextMeshProUGUI duckLevelText = default;
     public string duckLevelTextPrefix = "Duck Quality: ";
     public string[] duckLevelNames = default;
+
+    [Space]
+    [Header("Audio Settings")]
+    [SerializeField] private TextMeshProUGUI musicVolumeText = default;
+    [SerializeField] private string musicTextPrefix = default;
+    [SerializeField] private Slider musicVolumeSlider = default;
+
+    [SerializeField] private TextMeshProUGUI soundVolumeText = default;
+    [SerializeField] private string soundTextPrefix = default;
+    [SerializeField] private Slider soundVolumeSlider = default;
+
+    [SerializeField] private string musicVolumeKey = "musicVolume";
+    [SerializeField] private string soundVolumeKey = "soundVolume";
+
+    private AudioSource musicSource;
 
     [Space]
     [Header("Camera Transition")]
@@ -105,6 +123,32 @@ public class Main_Menu : MonoBehaviour
 
         //Set the text to match the duck quality level
         duckLevelText.text = duckLevelTextPrefix + duckLevelNames[duckLevel];
+
+
+        musicSource = GameObject.FindGameObjectWithTag("MusicPlayer").GetComponent<AudioSource>();
+
+        if (PlayerPrefs.HasKey(musicVolumeKey))
+        {
+            musicVolumeSlider.value = PlayerPrefs.GetFloat(musicVolumeKey) * 20;
+        }
+        else
+        {
+            PlayerPrefs.SetFloat(musicVolumeKey, 1);
+            musicVolumeSlider.value = 1;
+        }
+
+        if (PlayerPrefs.HasKey(soundVolumeKey))
+        {
+            soundVolumeSlider.value = PlayerPrefs.GetFloat(soundVolumeKey) * 20;
+        }
+        else
+        {
+            PlayerPrefs.SetFloat(soundVolumeKey, 1);
+            soundVolumeSlider.value = 20;
+        }
+
+        MusicSliderChanged();
+        SoundSliderChanged();
     }
 
     // Update is called once per frame
@@ -113,7 +157,14 @@ public class Main_Menu : MonoBehaviour
         //If escape is pressed, reset to the main screen
         if(Input.GetKeyDown(KeyCode.Escape))
         {
-            SetScreenMultiplier(0);
+            if(currentOffsetMultiplier == 2)
+            {
+                SetScreenMultiplier(1);
+            }
+            else
+            {
+                SetScreenMultiplier(0);
+            }
         }
 
         //Make the width of the instruction box the same as the canvas width
@@ -148,10 +199,12 @@ public class Main_Menu : MonoBehaviour
         if(yPos >= 0)
         {
             //Calculate the eased value to interpolate between rotations using the position the menu is between the two screens
-            float ease = EaseInOut(yPos / screenOffset, cameraEasePow);
+            float easeInput = Mathf.Min(1, yPos / screenOffset);
+            float ease = EaseInOut(easeInput, cameraEasePow);
 
             //Interpolate the rotation based on the easing
             float rot = Mathf.Lerp(camRot1, camRot2, ease);
+            Debug.Log(yPos / screenOffset);
 
             //Rotate the camera to match the new rotation
             Transform camTransform = Camera.main.transform;
@@ -211,6 +264,8 @@ public class Main_Menu : MonoBehaviour
 
         //Store the new setting
         PlayerPrefs.SetInt(qualityLevelKey, qualityLevel);
+
+        enableOnQuality.QualityUpdated();
     }
 
     public void IncreaseAliasingLevel()
@@ -266,6 +321,26 @@ public class Main_Menu : MonoBehaviour
 
         //Store the new setting
         PlayerPrefs.SetInt(duckLevelKey, duckLevel);
+    }
+
+    public void MusicSliderChanged()
+    {
+        float volume = musicVolumeSlider.value * 0.05f;
+        musicVolumeText.text = musicTextPrefix + (volume * 100).ToString("000") + "%";
+
+        musicSource.volume = volume;
+
+        PlayerPrefs.SetFloat(musicVolumeKey, volume);
+    }
+
+    public void SoundSliderChanged()
+    {
+        float volume = soundVolumeSlider.value * 0.05f;
+        soundVolumeText.text = soundTextPrefix + (volume * 100).ToString("000") + "%";
+
+        clickAudio.volume = volume;
+
+        PlayerPrefs.SetFloat(soundVolumeKey, volume);
     }
 
 }

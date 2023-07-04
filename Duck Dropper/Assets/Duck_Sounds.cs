@@ -4,28 +4,24 @@ using UnityEngine;
 
 public class Duck_Sounds : MonoBehaviour
 {
-    public Rigidbody rb = default;
+    [SerializeField] private Rigidbody rb = default;
 
-    public AudioSource[] sources = default;
+    [SerializeField] private AudioSource[] sources = default;
 
-    public float relativeVelCutoff = 0.6f;
-    public float velCutoff = 0.5f;
+    [SerializeField] private float relativeVelCutoff = 0.6f;
+    [SerializeField] private float velCutoff = 0.5f;
 
-    public float otherDuckSoundCutoff = 0.1f;
+    [SerializeField] private float otherDuckSoundCutoff = 0.1f;
 
-    public float velocityDivisor = 5f;
-    public float maxVolume = 0.5f;
-    public float importantMaxVolume = 1f;
-    public float pitchShiftMax = 0.1f;
+    [SerializeField] private float velocityDivisor = 5f;
+    [SerializeField] private float maxVolume = 0.5f;
+    [SerializeField] private float importantMaxVolume = 1f;
+    [SerializeField] private float pitchShiftMax = 0.1f;
 
-    public float delayBetweenSounds = 0.2f;
+    [SerializeField] private float delayBetweenSounds = 0.2f;
 
     [Space]
     public float timeSinceSound = 10;
-
-    GameObject lastCollision = null;
-
-    int collisionCount = 0;
 
     public bool isImportant = false;
 
@@ -34,6 +30,7 @@ public class Duck_Sounds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Get a reference to the sound effect manager that controls which ducks are allowed to play a hit sound
         soundEffectManager = (Sound_Effect_Manager)FindObjectOfType(typeof(Sound_Effect_Manager));
     }
 
@@ -41,30 +38,38 @@ public class Duck_Sounds : MonoBehaviour
     void Update()
     {
         timeSinceSound += Time.deltaTime;
-
-        if(collisionCount > 1) Debug.Log(collisionCount);
-        collisionCount = 0;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
+        //Check if the relative velocity is high enough for a hit sound
         if(collision.relativeVelocity.magnitude >= relativeVelCutoff)
         {
+            //Check if the duck is moving enough for a hit sound
             if(rb.velocity.magnitude >= velCutoff)
             {
+                //Check if the other duck is not playing a sound
                 Duck_Sounds otherDuckSounds = collision.gameObject.GetComponent<Duck_Sounds>();
                 if (otherDuckSounds == null || otherDuckSounds.timeSinceSound > otherDuckSoundCutoff)
                 {
-                    if(lastCollision != collision.gameObject && timeSinceSound >= delayBetweenSounds)
+                    //Check if enough time has passed since the last sound effect played
+                    if(timeSinceSound >= delayBetweenSounds)
                     {
+                        //Check if this duck is important or not. If it is important it bypasses the sound effect manager so it always plays a sound
                         if(isImportant)
                         {
+                            //Calculate the volume of the hit sound based on the speed of impact using the important duck values
                             float volume = Mathf.Min(importantMaxVolume, collision.relativeVelocity.magnitude / velocityDivisor);
+
+                            //Play a random hit sound at that volume
                             PlayHit(volume);
                         }
                         else
                         {
+                            //Calculate the volume of the hit sound based on the speed of impact using the regular duck values
                             float volume = Mathf.Min(maxVolume, collision.relativeVelocity.magnitude / velocityDivisor);
+
+                            //Request that the sound effect manager plays a hit sound at this duck with that volume
                             soundEffectManager.RequestHitSound(this, volume);
                         }
                         
@@ -78,16 +83,18 @@ public class Duck_Sounds : MonoBehaviour
 
     public void PlayHit(float volume)
     {
+        //Pick a random audio source to play the hit sound using
         AudioSource source = sources[Random.Range(0, sources.Length)];
 
+        //Randomize the pitch within a range
         source.pitch = 1 + Random.Range(-pitchShiftMax, pitchShiftMax);
+
+        //Set the volume and play the sound
         source.volume = volume;
         source.Play();
 
-        Debug.Log(source.pitch);
-
+        //Reset the amount of time since a hit sound played
         timeSinceSound = 0;
 
-        collisionCount++;
     }
 }

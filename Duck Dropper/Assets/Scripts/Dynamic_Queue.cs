@@ -100,6 +100,7 @@ public class Dynamic_Queue : MonoBehaviour
             }
         }
 
+        //Get the sound effect system on the duck and set it's importance value to match the parameter passed from the spawner
         Duck_Sounds sounds = duckList[duckIndex].GetComponent<Duck_Sounds>();
         if (sounds != null) sounds.isImportant = important;
 

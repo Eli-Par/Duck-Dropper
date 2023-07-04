@@ -101,6 +101,7 @@ public class Duck_Spawner : MonoBehaviour
         return new Vector3(0, duckHeight, 0);
     }
 
+    //Overloaded version of SpawnDuck method that defaults importance to false. This is to not break other uses that don't specify the third parameter.
     private void SpawnDuck(Vector3 spawnPoint, float range)
     {
         SpawnDuck(spawnPoint, range, false);
@@ -149,7 +150,7 @@ public class Duck_Spawner : MonoBehaviour
             //Condition: Repeat while the offset results in a position inside of an exterior invisible wall
         } while (Physics.CheckBox(spawnPoint + randOffset, new Vector3(boxCheckSize, boxCheckSize, boxCheckSize), Quaternion.identity, stuckDuckLayerMask));
 
-        //Add a duck at the location specified by the spawnPoint with the random offset
+        //Add a duck at the location specified by the spawnPoint with the random offset. Passes the importance value to the dynamic queue
         dynamicQueue.AddDuck(spawnPoint + randOffset, important);
 
         //Update duck counter text

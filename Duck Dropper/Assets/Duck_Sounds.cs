@@ -42,7 +42,7 @@ public class Duck_Sounds : MonoBehaviour
     {
         timeSinceSound += Time.deltaTime;
 
-        if(collisionCount > 1) Debug.Log(collisionCount);
+        //if(collisionCount > 1) Debug.Log(collisionCount);
         collisionCount = 0;
     }
 
@@ -84,7 +84,7 @@ public class Duck_Sounds : MonoBehaviour
         source.volume = volume;
         source.Play();
 
-        Debug.Log(source.pitch);
+        //Debug.Log(source.pitch);
 
         timeSinceSound = 0;
 

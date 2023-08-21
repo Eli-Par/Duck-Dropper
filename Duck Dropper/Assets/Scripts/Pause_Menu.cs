@@ -32,6 +32,11 @@ public class Pause_Menu : MonoBehaviour
         //Set elements of pause menu to match if the menu is active
         backgroundPanel.SetActive(isPaused);
         buttons.SetActive(isPaused);
+
+        if(PlayerPrefs.HasKey("soundVolume"))
+        {
+            clickAudio.volume = PlayerPrefs.GetFloat("soundVolume");
+        }
     }
 
     // Update is called once per frame

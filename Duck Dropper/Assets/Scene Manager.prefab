@@ -236,7 +236,7 @@ Animator:
   m_GameObject: {fileID: 3677093043610471698}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 2dacf3f8229cdb146bd4496d9c42fa6f, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 2
   m_ApplyRootMotion: 0
@@ -289,12 +289,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1135f26b0ca414640a02626051877e2f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionObj: {fileID: 3677093043610471698}
-  transitionAnimator: {fileID: 3677093043610471710}
   transitionStartTime: 1.4
   transitionEndTime: 1.6
-  startAnimName: FadeStart
-  endAnimName: FadeEnd
   canvasTransform: {fileID: 3677093045088888616}
   transitionTransform: {fileID: 6895015832421418201}
   duckTransform: {fileID: 4085478695075126218}
@@ -365,7 +361,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 10
   m_TargetDisplay: 0
 --- !u!114 &3677093045088888618
 MonoBehaviour:

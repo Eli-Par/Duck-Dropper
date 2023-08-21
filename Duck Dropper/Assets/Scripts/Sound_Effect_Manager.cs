@@ -30,6 +30,7 @@ public class Sound_Effect_Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        /*
         //Debug code to change the framerate on the fly to test in lag conditions
         if(Input.GetKeyDown("y"))
         {
@@ -57,6 +58,7 @@ public class Sound_Effect_Manager : MonoBehaviour
             Debug.Log("Framerate 15");
         }
         //End debug code
+        */
 
         //If no request has been received, set the time since a sound played to half the delay
         if(!receivedRequest)

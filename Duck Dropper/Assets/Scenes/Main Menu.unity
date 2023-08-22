@@ -20197,10 +20197,10 @@ RectTransform:
   m_Father: {fileID: 1939058852}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 1, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 145}
-  m_SizeDelta: {x: 564.13696, y: 97.36737}
+  m_SizeDelta: {x: 497.05957, y: 97.36737}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1190898046
 MonoBehaviour:
@@ -20222,7 +20222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Duck Dropper
+  m_text: Dropping Ducks
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bd4b1b4fd0d752741acc8eb33cda7390, type: 2}
   m_sharedMaterial: {fileID: -2612919775276953841, guid: bd4b1b4fd0d752741acc8eb33cda7390, type: 2}
@@ -20296,7 +20296,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1190898046}
-    characterCount: 12
+    characterCount: 14
     spriteCount: 0
     spaceCount: 1
     wordCount: 2

@@ -204,7 +204,6 @@ public class Main_Menu : MonoBehaviour
 
             //Interpolate the rotation based on the easing
             float rot = Mathf.Lerp(camRot1, camRot2, ease);
-            Debug.Log(yPos / screenOffset);
 
             //Rotate the camera to match the new rotation
             Transform camTransform = Camera.main.transform;

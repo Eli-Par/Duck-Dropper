@@ -34300,13 +34300,13 @@ MonoBehaviour:
   screenOffset: 600
   currentOffsetMultiplier: 0
   screenTransitionSpeed: 900
-  defaultQualityLevel: 3
+  defaultQualityLevel: 2
   qualityLevel: 0
   qualityLevelKey: qualityLevel
   qualityLevelText: {fileID: 264931191}
   qualityLevelPrefix: 'Quality: '
   enableOnQuality: {fileID: 1531657080}
-  aliasingDefault: 1
+  aliasingDefault: 0
   aliasingLevel: 0
   aliasingKey: aliasingLevel
   aliasingText: {fileID: 538561800}

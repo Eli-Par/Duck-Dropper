@@ -22,16 +22,7 @@ public class Screnshot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.F2))
-        {
-            string name = "Duck Dropper " + DateTime.Now.ToString("yyyy/MM/dd HH-mm-ss") + ".png";
-            lastName = name;
-            ScreenCapture.CaptureScreenshot(name, superSize);
-            Debug.Log("Screenshot " + name + " taken");
-            timer = 0;
-        }
-
-        if(timer < showTime)
+        if (timer < showTime)
         {
             text.text = lastName;
             text.gameObject.SetActive(true);
@@ -39,6 +30,15 @@ public class Screnshot : MonoBehaviour
         else
         {
             text.gameObject.SetActive(false);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F2))
+        {
+            string name = "Duck Dropper " + DateTime.Now.ToString("yyyy/MM/dd HH-mm-ss") + ".png";
+            lastName = name;
+            ScreenCapture.CaptureScreenshot(name, superSize);
+            Debug.Log("Screenshot " + name + " taken");
+            timer = 0;
         }
 
         timer += Time.unscaledDeltaTime;

@@ -1,0 +1,11 @@
+# Assets Used
+- [ColorSkies](https://assetstore.unity.com/packages/2d/textures-materials/sky/colorskies-91541)
+- [Free Stylized Garden Asset](https://assetstore.unity.com/packages/3d/props/exterior/free-stylized-garden-asset-145896)
+- [House of Color C Green](https://assetstore.unity.com/packages/3d/props/exterior/house-of-color-c-green-152209)
+- [Stylized Grass Texture](https://assetstore.unity.com/packages/2d/textures-materials/glass/stylized-grass-texture-153153)
+- [Tabletop Jazz Cafe](https://assetstore.unity.com/packages/audio/music/tabletop-jazz-cafe-free-music-224462)
+- [Minimal UI Sounds](https://assetstore.unity.com/packages/audio/sound-fx/minimal-ui-sounds-78266)
+- [Old Water Well](https://assetstore.unity.com/packages/3d/environments/old-water-well-138903)
+- [Stone Fence](https://assetstore.unity.com/packages/3d/props/exterior/stone-fence-2437)
+- [Stylized Plants Kit](https://assetstore.unity.com/packages/3d/environments/stylized-plants-kit-188109)
+- [Rubik Font](https://fonts.google.com/specimen/Rubik)

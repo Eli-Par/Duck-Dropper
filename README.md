@@ -34,4 +34,6 @@ Sections serve two rolls. They store references to the ducks that are contained 
 All this logic allows many ducks to be on screen with a minimal performance loss and performs better in this scenario then simply using a traditional LOD system (although one is also employed as well). It allows for small numbers of ducks on screen to still have high fidelity, even when farther away, while preventing large numbers of ducks close to the camera from having a large performance hit.
 
 # Credits
-Special thanks to Nubi for creating the duck silhouette and the large duck in the logo. Here are all the other [assets used](CREDITS.md).
+Special thanks to [Nubi](https://www.instagram.com/nubiibranch/) for drawing the duck silhouette and the large duck in the logo for me. I really appreciate the help.
+
+Here are all the other [assets used](CREDITS.md).
